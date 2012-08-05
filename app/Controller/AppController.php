@@ -33,5 +33,10 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 
-    public $components = Array('Auth', 'Session');
+    public $components = array(
+        'Auth' => array(
+            'loginRedirect' => '/users/home'
+        ),
+        'Session'
+    );
 }
