@@ -3,6 +3,8 @@ App::uses('User', 'Model');
 
 class UserTest extends CakeTestCase {
 
+    public $fixtures = array('app.user');
+
     public function setup() {
         parent::setup();
         $this->User = ClassRegistry::init('User');
@@ -12,7 +14,7 @@ class UserTest extends CakeTestCase {
         $user = $this->User->findByName('testuser');
 
         //debug($user);
-        $this->assertEqual($user['username'], 'testuser'); // usersテーブルにデータが入っていないとテスト失敗となります。
+        $this->assertEqual($user['username'], 'testuser');
     }
 
     public function testFindByName_nouser() {
