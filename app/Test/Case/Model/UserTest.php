@@ -12,7 +12,7 @@ class UserTest extends CakeTestCase {
         $user = $this->User->findByName('testuser');
 
         //debug($user);
-        $this->assertEqual($user['username'], 'testuser');
+        $this->assertEqual($user['username'], 'testuser'); // usersテーブルにデータが入っていないとテスト失敗となります。
     }
 
     public function testFindByName_nouser() {

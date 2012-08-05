@@ -5,5 +5,14 @@ class User extends AppModel {
         $this->data['User']['password'] = AuthComponent::password($this->data['User']['password']);
         return true;
     }
+
+    public function findByName($name) {
+        $result = $this->find('first', array('conditions' => array('username' => $name)));
+
+        //debug($result);
+        if (!empty($result)) {
+            return $result['User'];
+        }
+    }
 }
 ?>
